@@ -1,0 +1,50 @@
+{
+  "name": "tuples",
+  "version": "0.0.0",
+  "description": "A tiny tuple-like implementation in JavaScript.",
+  "main": "tuples.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "tuples.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gummesson/tuples.git"
+  },
+  "keywords": [
+    "tuple",
+    "tuples",
+    "array",
+    "arrays"
+  ],
+  "author": "Ellen Gummesson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gummesson/tuples/issues"
+  },
+  "homepage": "https://github.com/gummesson/tuples",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.1",
+    "covert": "^1.1.0",
+    "smokestack": "^3.3.0",
+    "tap-closer": "^1.0.0",
+    "tape": "^4.0.3"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "start": "npm run bundle",
+    "prerelease": "npm run bundle",
+    "bundle": "babel index.js > tuples.js",
+    "test": "npm run bundle && babel-node test.js",
+    "test:browser": "browserify test.js | tap-closer | smokestack"
+  }
+}
